@@ -1,0 +1,36 @@
+{
+  "name": "@huayutech/single-lib-test",
+  "version": "1.0.3",
+  "description": "",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.mjs",
+  "files": [
+    "dist",
+    "readme.md"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean:dist": "rimraf dist",
+    "build:types": "tsc -p tsconfig.dts.json && rollup -c rollup.config.dts.mjs",
+    "build": "rollup -c"
+  },
+  "keywords": [],
+  "author": "yoyoyosiyu",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "chalk": "^5.2.0",
+    "rimraf": "^4.4.1",
+    "rollup-plugin-dts": "^5.3.0",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "rollup": "^3.20.2"
+  },
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs.js",
+    "types": "./dist/index.d.ts"
+  }
+}
